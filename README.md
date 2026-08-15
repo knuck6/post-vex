@@ -19,3 +19,7 @@ To use the components in your app, import them as follows:
 ```tsx
 import { Button } from "@/components/ui/button";
 ```
+Facebook and LinkedInPage don`t work 
+
+
+twitter/x don`t work 
