@@ -6,7 +6,7 @@ import { Globe } from "lucide-react";
 import { useEffect, useState } from "react";
 import { FaBluesky, FaFacebook, FaFacebookF, FaInstagram, FaLinkedin, FaLinkedinIn, FaPinterest, FaSquareInstagram, FaThreads, FaTiktok, FaTwitter, FaYoutube } from "react-icons/fa6";
 
-const PLATFORM_CONFIG: Record<
+export const PLATFORM_CONFIG: Record<
   string,
   { label: string; icon: any; acceptsTextOnly: boolean; acceptsImage: boolean; acceptsVideo: boolean }
 > = {
@@ -58,7 +58,7 @@ export function DashboardPosts() {
       {/* Upcoming Section */}
       <div className="border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 rounded-2xl p-6 space-y-4 shadow-sm">
         <div className="flex items-center justify-between">
-          <h3 className="text-sm font-bold text-zinc-900 dark:text-zinc-100">Upcoming ({posts.upcoming.length})</h3>
+          <h3 className="text-sm font-bold text-zinc-900 dark:text-zinc-100">Vor fi publicate ({posts.upcoming.length})</h3>
           <div className="space-y-3">
             {posts.upcoming.map((post) => (
               <div
@@ -67,7 +67,7 @@ export function DashboardPosts() {
               >
                 <div className="flex items-center justify-between text-xs text-zinc-400">
                   <div className="flex items-center gap-1.5">
-                    {post.platforms.map((p:string) => {
+                    {post.platforms.map((p: string) => {
                       const config = PLATFORM_CONFIG[p] || { icon: Globe };
                       const Icon = config.icon;
                       return <Icon key={p} className="w-3.5 h-3.5 text-zinc-400" />;
@@ -94,7 +94,7 @@ export function DashboardPosts() {
       {/* Published Section */}
       <div className="border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 rounded-2xl p-6 space-y-4 shadow-sm">
         <div className="flex items-center justify-between">
-          <h3 className="text-sm font-bold text-zinc-900 dark:text-zinc-100">Published ({posts.published.length})</h3>
+          <h3 className="text-sm font-bold text-zinc-900 dark:text-zinc-100">Publicate  ({posts.published.length})</h3>
         </div>
         {!posts.published || posts.published.length === 0 ? (
           <p>Nici un post publicat</p>
@@ -112,12 +112,13 @@ export function DashboardPosts() {
                     })}
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[11px] text-emerald-500 font-medium">Published</span>
+                    <span className="text-[11px] text-emerald-500 font-medium">Publicate</span>
                     <span className="text-[11px] text-zinc-400">{formatTimestamp(post.createdAt)}</span>
                   </div>
-                  <p className="text-sm text-zinc-800 dark:text-zinc-200 line-clamp-2">{post.content}</p>
                 </div>
-
+                <div className="items-center">
+                  <p className="text-sm text-zinc-800 dark:text-zinc-200  flex flex-wrap">{post.content}</p>
+                </div>
                 {/* Reactions badge */}
                 <div className="flex items-center gap-1 text-sm text-pink-500 font-semibold">
                   <span>❤️</span>

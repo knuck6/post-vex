@@ -9,9 +9,9 @@ const DashboardBoardView = () => {
     
     return (
         <div className="">
-            dashboardView
+           <span className="mt-2"></span>
 
-            <CheckUser/>
+            {/* <CheckUser/> */}
             <span className="p-2"></span>
             <CardStatsDashboard/>
         </div>

@@ -15,9 +15,7 @@ const AVAILABLE_PLATFORMS = [
   { id: "youtube", name: "YouTube", icon: FaYoutube, color: "bg-red-600 text-white" },
   { id: "twitter", name: "X / Twitter", icon: FaTwitter, color: "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900" },
   { id: "linkedin", name: "LinkedIn Profile", icon: FaLinkedinIn, color: "bg-blue-600 text-white" },
-  { id: "linkedin_page", name: "LinkedIn Page", icon: FaLinkedin, color: "bg-blue-700 text-white" },
   { id: "facebook", name: "Facebook Profile", icon: FaFacebook, color: "bg-blue-500 text-white" },
-  { id: "facebook_page", name: "Facebook Page", icon: FaFacebookF, color: "bg-blue-600 text-white" },
   { id: "instagram", name: "Instagram", icon: FaInstagram, color: "bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 text-white" },
   { id: "tiktok", name: "TikTok", icon: FaTiktok, color: "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900" },
   { id: "pinterest", name: "Pinterest", icon: FaPinterest, color: "bg-rose-600 text-white" },
@@ -49,7 +47,7 @@ const accounts = useQuery(api.accounts.listAccounts);
       const result = await syncAccounts();
       if (result.success) {
         setSyncFeedback({
-          message: `Successfully synced ${result.count} account${result.count === 1 ? "" : "s"}.`,
+          message: `Sincronizat cu succes ${result.count} cont${result.count === 1 ? "" : "uri"}.`,
           type: "success",
         });
       }
@@ -97,7 +95,7 @@ const accounts = useQuery(api.accounts.listAccounts);
       });
     } catch (err: any) {
       setSyncFeedback({
-        message: err.message || "Failed to disconnect account.",
+        message: err.message || "Eroare la deconectare a contului.",
         type: "error",
       });
     } finally {
@@ -112,10 +110,10 @@ const accounts = useQuery(api.accounts.listAccounts);
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b pb-5 dark:border-zinc-800">
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-            Connected Accounts
+            Conecteaza-te la social media
           </h1>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-            Manage your social media profiles linked through Zernio.
+          <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+            Zernio va fi un intermediar care nu va mentine data
           </p>
         </div>
 
@@ -125,7 +123,7 @@ const accounts = useQuery(api.accounts.listAccounts);
             className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-zinc-900 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 rounded-lg transition-all"
           >
             <PlusCircle className="w-4 h-4" />
-            Connect Account
+            Conecteaza un cont
           </button>
 
           <button
@@ -134,7 +132,7 @@ const accounts = useQuery(api.accounts.listAccounts);
             className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-lg shadow-sm transition-all disabled:opacity-50"
           >
             <RefreshCw className={`w-4 h-4 ${isSyncing ? "animate-spin" : ""}`} />
-            {isSyncing ? "Syncing..." : "Sync Accounts"}
+            {isSyncing ? "Sincronizez..." : "Sincronizeaza conturile"}
           </button>
         </div>
       </div>
@@ -149,9 +147,9 @@ const accounts = useQuery(api.accounts.listAccounts);
           }`}
         >
           {syncFeedback.type === "success" ? (
-            <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
+            <CheckCircle2 className="size-8 shrink-0" />
           ) : (
-            <AlertCircle className="w-5 h-5 flex-shrink-0" />
+            <AlertCircle className="size-8 shrink-0" />
           )}
           <span>{syncFeedback.message}</span>
         </div>
@@ -199,12 +197,12 @@ const accounts = useQuery(api.accounts.listAccounts);
                     onClick={() => setAccountToDisconnect({ id: acc._id, name: acc.displayName })}
                     disabled={isDeleting}
                     className="p-1.5 text-zinc-400 hover:text-rose-600 dark:hover:text-rose-400 rounded-lg hover:bg-rose-50 dark:hover:bg-rose-950/30 transition opacity-80 group-hover:opacity-100"
-                    title="Disconnect account"
+                    title="Deconecteza-ma"
                   >
                     {isDeleting ? (
-                      <Loader2 className="w-4 h-4 animate-spin text-rose-500" />
+                      <Loader2 className="size-7 animate-spin text-rose-500" />
                     ) : (
-                      <Trash2 className="w-4 h-4" />
+                      <Trash2 className="size-7" />
                     )}
                   </button>
                 </div>
@@ -235,10 +233,10 @@ const accounts = useQuery(api.accounts.listAccounts);
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in">
           <div className="w-full max-w-sm rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 shadow-2xl space-y-4">
             <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
-              Disconnect Account?
+             Deconecteaza contul?
             </h3>
             <p className="text-sm text-zinc-500 dark:text-zinc-400">
-              Are you sure you want to disconnect <strong>{accountToDisconnect.name}</strong>? You will need to re-authenticate if you wish to post to this account again.
+              Esti sigur ca vrei sa deconectezi <strong>{accountToDisconnect.name}</strong>? Ai nevoie de reautentificare pentru a posta din nou.
             </p>
 
             <div className="flex items-center justify-end gap-3 pt-2">
@@ -246,7 +244,7 @@ const accounts = useQuery(api.accounts.listAccounts);
                 onClick={() => setAccountToDisconnect(null)}
                 className="px-4 py-2 text-sm font-medium text-zinc-700 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700 rounded-lg transition"
               >
-                Cancel
+                Anuleaza
               </button>
               <button
                 onClick={handleConfirmDisconnect}
@@ -254,7 +252,7 @@ const accounts = useQuery(api.accounts.listAccounts);
                 className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-rose-600 hover:bg-rose-700 rounded-lg shadow-sm transition disabled:opacity-50"
               >
                 {disconnectingId ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
-                Disconnect
+                Deconecteza-ma
               </button>
             </div>
           </div>

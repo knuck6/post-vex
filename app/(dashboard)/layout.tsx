@@ -1,4 +1,5 @@
 "use client"
+import MainNavbar from "@/components/features/main-navbar";
 import { Button } from "@/components/ui/button";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarHeader, SidebarInset, SidebarProvider, SidebarRail, SidebarTrigger } from "@/components/ui/sidebar";
 import { UserSync } from "@/components/UserSync";
@@ -17,9 +18,9 @@ const LayoutDashboard = ({ children }: Props) => {
     const pathname = usePathname()
     return (
         <SidebarProvider className="flex">
-            <Sidebar className="flex">
-                <SidebarRail />
-                <SidebarHeader className="flex items-center text-3xl  p-6">Postatorul</SidebarHeader>
+            <Sidebar variant="floating">
+                
+                <SidebarHeader className="flex items-center text-3xl  p-6">Postator</SidebarHeader>
                 <SidebarContent>
                     <SidebarGroup className="text-center gap-6 pt-4">
                         {navLinks.map(({ href, label, icon: Icon }) => {
@@ -29,32 +30,35 @@ const LayoutDashboard = ({ children }: Props) => {
                             return (
                                 <Link key={href} href={href}
                                     className={cn(
-                                        "flex items-center gap-5 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                                        "flex items-center gap-8 space-x-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                                         isActive
                                             ? "bg-primary text-primary-foreground"
                                             : "text-accent-ai-text hover:bg-muted hover:text-foreground"
                                     )}>
-                                    <Icon className="size-12" />
+                                    <Icon className="size-8" />
                                     <span>{label}</span>
                                 </Link>
                             )
                         })}
                     </SidebarGroup>
+                    
                 </SidebarContent>
-                <SidebarFooter className="flex items-center pb-8">
+                <SidebarFooter className="flex items-center">
+                    <div className="flex-1 text-center ">
+                        <p className="text-sm capitalize">tasta D </p>
+                        <span className="text-sm text-wrap">apasata pentru intuneric/luminat</span>
+                    </div>
                     <Button variant={"ghost"}>
                         <UserButton />
                     </Button>
+                    <span className="pb-16"></span>
                 </SidebarFooter>
             </Sidebar>
             <SidebarInset>
                 <div className="p-2 overflow-hidden">
 
                 
-                    <nav>
-                       
-                       
-                    </nav>
+                    <MainNavbar/>
                     <main className="flex px-auto justify-center text-center">
                         <ZernioSync>
                             <UserSync>

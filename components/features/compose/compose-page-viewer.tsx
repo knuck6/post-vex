@@ -3,8 +3,8 @@ import { DashboardPosts } from "./dashboard-posts";
 
 const ComposePageViewer = () => {
     return (
-        <div>
-            Compose
+        <div className="space-x-2.5">
+           <span className="p-2"></span>
             <ComposePostManager/>
             
         </div>

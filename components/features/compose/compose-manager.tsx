@@ -196,9 +196,9 @@ export function ComposePostManager() {
 
     const formatTimestamp = (ts?: number) => {
         if (!ts) return "";
-        return new Date(ts).toLocaleString("en-US", {
-            month: "numeric",
+        return new Date(ts).toLocaleString("ro-RO", {
             day: "numeric",
+            month: "numeric",
             year: "numeric",
             hour: "numeric",
             minute: "2-digit",
@@ -308,7 +308,7 @@ export function ComposePostManager() {
                                                     >
                                                         <div className="flex items-center gap-3 min-w-0">
                                                             <div
-                                                                className={`p-2 rounded-lg flex-shrink-0 ${
+                                                                className={`p-2 rounded-lg shrink-0 ${
                                                                     isSelected
                                                                         ? "bg-indigo-600 text-white"
                                                                         : "bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300"
