@@ -29,13 +29,13 @@ const CardStatsDashboard = () => {
     };
     useEffect(() => {
         fetchPosts();
-    }, []);
+    }, [data]);
     return (
         <div className="grid pt-8 gap-3 space-y-6 items-center justify-center text-center">
 
             {data?.stats ? (
                 <div className="grid grid-cols-1 md:grid-cols-3 justify-between gap-4 mx-auto p-2">
-                    <div className="border rounded-xl p-0.5 relative bg-white shadow-sm">
+                    <div className="border rounded-xl p-0.5 relative bg-white shadow-md dark:bg-gray-900/55">
                         <Card>
                             <CardHeader>
                                 <CardTitle><p className="absolute top-4 right-4 text-xs font-semibold text-red-500">
@@ -47,7 +47,7 @@ const CardStatsDashboard = () => {
                             </CardHeader>
                             <CardContent><div className="text-sm text-gray-400 mt-2">Posturi pregatite</div></CardContent>
                         </Card>
-                    </div><div className="border rounded-xl p-0.5 relative bg-white shadow-sm">
+                    </div><div className="border rounded-xl p-0.5 relative bg-white shadow-md dark:bg-gray-900/55">
                         <Card>
                             <CardHeader>
                                 <CardTitle>
@@ -61,7 +61,7 @@ const CardStatsDashboard = () => {
                             </CardHeader>
                             <CardContent><div className="text-sm text-gray-400 mt-2">Posturi publicate prin noi</div></CardContent>
                         </Card>
-                    </div><div className="border rounded-xl p-0.5 relative bg-white shadow-sm">
+                    </div><div className="border rounded-xl p-0.5 relative bg-white shadow-md dark:bg-gray-900/55">
                         <Card>
                             <CardHeader>
                                 <CardTitle>
@@ -98,7 +98,7 @@ const CardStatsDashboard = () => {
                 (<div className="flex-wrap hover:opacity-85 cursor-pointer lg:h-72 lg:overflow-y-scroll">
                     {posts?.published.map((activity) => (
                         <div key={activity.id} className="flex  flex-col
-                        items-start gap-4 px-6 py-4 hover:bg-slate-50/50 transition-colors">
+                        items-start gap-4 px-6 py-4 ">
                             <div className="size-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5 bg-zinc-50 text-zinc-600">
                                 <SendIcon className="size-5" />
                             </div>

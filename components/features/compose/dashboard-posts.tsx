@@ -54,7 +54,7 @@ export function DashboardPosts() {
   }, []);
 
   return (
-    <div className="lg:col-span-6 space-y-6">
+    <div className="lg:col-span-4 space-y-6 ">
       {/* Upcoming Section */}
       <div className="border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 rounded-2xl p-6 space-y-4 shadow-sm">
         <div className="flex items-center justify-between">
@@ -92,7 +92,7 @@ export function DashboardPosts() {
       </div>
 
       {/* Published Section */}
-      <div className="border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 rounded-2xl p-6 space-y-4 shadow-sm">
+      <div className="border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 rounded-2xl p-6 space-y-4 shadow-sm overflow-y-scroll max-h-72">
         <div className="flex items-center justify-between">
           <h3 className="text-sm font-bold text-zinc-900 dark:text-zinc-100">Publicate  ({posts.published.length})</h3>
         </div>

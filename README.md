@@ -19,7 +19,8 @@ To use the components in your app, import them as follows:
 ```tsx
 import { Button } from "@/components/ui/button";
 ```
-Facebook and LinkedInPage don`t work 
+Facebook and LinkedInPage don`t work solved 18.08.2026
 
-
-twitter/x don`t work 
+TODOS:
+twitter/x don`t work  need something special .... take him out
+Check if user has zernio key at entrence ! If have show dashboard else redirect him to cont and help him understand how to get zernio key for idiots .

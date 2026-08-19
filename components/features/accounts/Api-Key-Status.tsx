@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useQuery, useMutation, useAction } from "convex/react";
 import { api } from "@/convex/_generated/api";
+import { Loader } from "lucide-react";
 
 export function ApiKeySettings() {
   const [apiKey, setApiKey] = useState("");
@@ -41,12 +42,12 @@ export function ApiKeySettings() {
   };
 
   if (keyStatus === undefined) {
-    return <div className="text-sm text-gray-500">Loading key status...</div>;
+    return <div className="text-sm text-gray-500">.. Cheia zernio <Loader className="size-6 animate-spin"/>...</div>;
   }
 
   return (
     <div className="p-4 border rounded-lg space-y-3">
-      <h3 className="font-semibold text-base">Zernio API Key</h3>
+      <h3 className="font-semibold text-base">Cheia Zernio</h3>
 
       {keyStatus?.hasKey ? (
         <div className="space-y-3">
@@ -69,7 +70,7 @@ export function ApiKeySettings() {
               disabled={isValidating}
               className="px-3 py-1.5 text-xs bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-30"
             >
-              {isValidating ? "Validating..." : "Validate Key"}
+              {isValidating ? "Verific..." : "Verifica cheia"}
             </button>
            
           </div>

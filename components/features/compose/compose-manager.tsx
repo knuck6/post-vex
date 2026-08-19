@@ -396,7 +396,7 @@ export function ComposePostManager() {
                         <form.Field name="mediaType">
                             {(field) => (
                                 <div className="flex items-center justify-end gap-2 text-xs">
-                                    <span className="text-zinc-500">Type:</span>
+                                    <span className="text-zinc-500">Tip:</span>
                                     <button
                                         type="button"
                                         onClick={() => {
@@ -409,7 +409,7 @@ export function ComposePostManager() {
                                                 : "border-zinc-200 dark:border-zinc-800 text-zinc-400"
                                         }`}
                                     >
-                                        <ImageIcon className="w-3 h-3" /> Image
+                                        <ImageIcon className="size-4" /> Imagine
                                     </button>
                                     <button
                                         type="button"
@@ -423,7 +423,7 @@ export function ComposePostManager() {
                                                 : "border-zinc-200 dark:border-zinc-800 text-zinc-400"
                                         }`}
                                     >
-                                        <Film className="w-3 h-3" /> Video
+                                        <Film className="size-4" /> Video
                                     </button>
                                 </div>
                             )}
@@ -435,7 +435,7 @@ export function ComposePostManager() {
                         {(field) => (
                             <div className="space-y-2">
                                 <label className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-                                    Publish Mode
+                                    Modul de publicare
                                 </label>
                                 <div className="grid grid-cols-2 gap-2 p-1 bg-zinc-100 dark:bg-zinc-950 rounded-xl border border-zinc-200 dark:border-zinc-800">
                                     <button
@@ -447,7 +447,7 @@ export function ComposePostManager() {
                                                 : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100"
                                         }`}
                                     >
-                                        <SendHorizontal className="w-3.5 h-3.5" /> Publish Now
+                                        <SendHorizontal className="size-5" /> Publica acum
                                     </button>
                                     <button
                                         type="button"
@@ -458,7 +458,7 @@ export function ComposePostManager() {
                                                 : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100"
                                         }`}
                                     >
-                                        <Clock className="w-3.5 h-3.5" /> Schedule
+                                        <Clock className="size-5" /> Publica in viitor
                                     </button>
                                 </div>
                             </div>
@@ -474,7 +474,7 @@ export function ComposePostManager() {
                                         {(field) => (
                                             <div className="space-y-1.5">
                                                 <label className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-                                                    Date
+                                                    Data
                                                 </label>
                                                 <div className="relative flex items-center">
                                                     <CalendarIcon className="w-4 h-4 text-zinc-400 absolute left-3 pointer-events-none" />
@@ -493,7 +493,7 @@ export function ComposePostManager() {
                                         {(field) => (
                                             <div className="space-y-1.5">
                                                 <label className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-                                                    Time
+                                                    Timpul
                                                 </label>
                                                 <div className="relative flex items-center">
                                                     <Clock className="w-4 h-4 text-zinc-400 absolute left-3 pointer-events-none" />
@@ -522,16 +522,16 @@ export function ComposePostManager() {
                             >
                                 {isSubmitting ? (
                                     <div className="flex items-center gap-2">
-                                        <Loader2 className="w-4 h-4 animate-spin" />
-                                        <span>{publishType === "now" ? "Publishing..." : "Scheduling..."}</span>
+                                        <Loader2 className="size-5 animate-spin" />
+                                        <span>{publishType === "now" ? "Public acum..." : "Public in viitor..."}</span>
                                     </div>
                                 ) : publishType === "now" ? (
                                     <>
-                                        Post Now <SendHorizontal className="w-4 h-4" />
+                                        Public acum <SendHorizontal className="w-4 h-4" />
                                     </>
                                 ) : (
                                     <>
-                                        Schedule Post <Clock className="w-4 h-4" />
+                                        Public in viitor <Clock className="w-4 h-4" />
                                     </>
                                 )}
                             </button>
@@ -541,7 +541,7 @@ export function ComposePostManager() {
             </div>
 
             {/* Feed Column */}
-            <div className="lg:col-span-6 space-y-6">
+            <div className="lg:col-span-6 space-y-3">
                 <DashboardPosts/>
             </div>
         </div>

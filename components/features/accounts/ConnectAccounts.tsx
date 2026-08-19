@@ -13,9 +13,8 @@ import Image from "next/image";
 // ==========================================
 const AVAILABLE_PLATFORMS = [
   { id: "youtube", name: "YouTube", icon: FaYoutube, color: "bg-red-600 text-white" },
-  { id: "twitter", name: "X / Twitter", icon: FaTwitter, color: "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900" },
-  { id: "linkedin", name: "LinkedIn Profile", icon: FaLinkedinIn, color: "bg-blue-600 text-white" },
-  { id: "facebook", name: "Facebook Profile", icon: FaFacebook, color: "bg-blue-500 text-white" },
+  { id: "linkedin", name: "Linkedin", icon: FaLinkedinIn, color: "bg-blue-600 text-white" },
+  { id: "facebook", name: "Facebook", icon: FaFacebook, color: "bg-blue-500 text-white" },
   { id: "instagram", name: "Instagram", icon: FaInstagram, color: "bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 text-white" },
   { id: "tiktok", name: "TikTok", icon: FaTiktok, color: "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900" },
   { id: "pinterest", name: "Pinterest", icon: FaPinterest, color: "bg-rose-600 text-white" },

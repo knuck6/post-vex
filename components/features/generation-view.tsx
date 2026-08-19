@@ -19,7 +19,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Separator } from "../ui/separator";
 
-const TONES = ["Profesional", "Creative", "Amuzant", "Minimalist", "Excitant"];
+const TONES = ["Profesional", "Creativ", "Amuzant", "Minimalist", "Excitant"];
 
 const PLATFORM_LABELS: Record<string, string> = {
   bluesky: "Bluesky",

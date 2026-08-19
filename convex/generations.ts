@@ -22,16 +22,17 @@ export const generateTextWithGemini = action({
 
     const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
     const targetPlatform = "general";
-    const charLimit =279;
+    const charLimit =280;
     
     // Strict prompt to eliminate conversational filler/meta intros
-    const formattedPrompt = `You are a professional social media content creator.
+    const formattedPrompt = `You are a team of professional social media content creator with 25 years of experience on marketing, management and advertising[Apply proven direct-response frameworks (AIDA, PAS, Hook-Story-Offer)] .
 Write a social media post based on the following context.
 
 Context / Idea: ${args.prompt}
 Tone: ${args.tone ?? "engaging and professional"}
 Target Platform: ${targetPlatform}
-
+Make sure is up to date on country like EU this text.
+Getting very high creative variant .
 CRITICAL INSTRUCTIONS:
 - STRICT CHARACTER LIMIT: The entire response MUST NOT exceed ${charLimit} characters (including spaces, emojis, and hashtags).
 - Return ONLY the exact post content ready to be published.

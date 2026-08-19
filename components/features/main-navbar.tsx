@@ -1,4 +1,4 @@
-import { Sparkle } from "lucide-react";
+import { SendToBack } from "lucide-react";
 import { SidebarTrigger } from "../ui/sidebar";
 import { navLinks } from "@/lib/constants";
 import { usePathname } from "next/navigation";
@@ -8,14 +8,14 @@ import { cn } from "@/lib/utils";
 const MainNavbar = () => {
     const pathname = usePathname()
     return (
-        <header className="sticky  top-0 z-50 flex items-center backdrop-blur-sm rounded-xl gap-3  p-4 ">
+        <header className="sticky  top-0 z-50 flex items-center leading-relaxed backdrop-blur-sm rounded-xl gap-3  p-4 ">
             <SidebarTrigger />
             <div className="hidden items-center gap-2.5 pr-2 text-2xl md:flex font-mono font-semibold tracking-wider">
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl">
-                    <Sparkle className="size-6 animate-spin text-cyan-600" />
+                    <SendToBack className="size-6 animate-spin text-indigo-600" />
                 </div>
             </div>
-            <span>Postator</span>
+            <h1 className="text-2xl tracking-wider animate-pulse text-indigo-600/95">Postator</h1>
             
             <div className="ml-auto p-2 mx-auto flex items-center gap-2 bg-accent-ai rounded-2xl">
                   <nav className="hidden ml-auto gap-2 mx-auto lg:flex items-center">
@@ -29,9 +29,9 @@ const MainNavbar = () => {
                                 href={href}
 
                                 className={cn(
-                                    "flex items-center gap-3 rounded-lg px-3.5 py-2.5 text-sm font-medium transition tracking-wide hover:shadow-2xl hover:bg-gray-400/20",
+                                    "flex items-center gap-3 rounded-lg px-3.5 py-2.5 text-sm font-medium transition tracking-wide hover:shadow-2xl hover:bg-gray-600",
                                     isActive
-                                        ? "bg-blue-600/45 text-primary-foreground"
+                                        ? "bg-blue-600/85 text-primary-foreground"
                                         : "hover:bg-muted hover:text-foreground"
                                 )}
                             >
