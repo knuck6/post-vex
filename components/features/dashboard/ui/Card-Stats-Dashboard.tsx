@@ -29,7 +29,7 @@ const CardStatsDashboard = () => {
     };
     useEffect(() => {
         fetchPosts();
-    }, [data]);
+    }, []);
     return (
         <div className="grid pt-8 gap-3 space-y-6 items-center justify-center text-center">
 

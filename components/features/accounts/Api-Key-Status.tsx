@@ -52,7 +52,7 @@ export function ApiKeySettings() {
       {keyStatus?.hasKey ? (
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <span className="text-sm font-medium">Current Key:</span>
+            <span className="text-sm font-medium">Cheia ta:</span>
             <code className="bg-gray-100 dark:bg-gray-600/60 px-2 py-1 rounded text-xs font-mono">
               {keyStatus.maskedKey}
             </code>
