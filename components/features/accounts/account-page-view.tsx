@@ -16,7 +16,7 @@ const AccountPageViewer = () => {
             <ApiKeySettings/>
             </div>
             <span className="gap-3"></span>
-            {zernioKey?.hasKey && (
+            {!zernioKey?.hasKey && (
                 <ZernioExplainedPage/>
             )}
             {zernioKey?.hasKey && (
