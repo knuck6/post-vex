@@ -408,6 +408,8 @@ export default function GenerationView() {
               {/* Date & Time Input */}
               {publishType === "scheduled" && (
                 <div className="space-y-1.5">
+                  <form>
+
                   <label className="text-xs font-semibold text-slate-600 dark:text-slate-400">
                     Postat in data si timpul
                   </label>
@@ -416,7 +418,8 @@ export default function GenerationView() {
                     value={scheduledDateTime}
                     onChange={(e) => setScheduledDateTime(e.target.value)}
                     className="text-xs rounded-xl h-9"
-                  />
+                    />
+                    </form>
                 </div>
               )}
             </div>

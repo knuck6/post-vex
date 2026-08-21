@@ -108,7 +108,6 @@ function getIncompatibilityReason(
 
 export function ComposePostManager() {
     const connectedAccounts = useQuery(api.accounts.listAccounts);
-    const postsOverview = useQuery(api.posts.getPostsOverview);
     const createPost = useAction(api.posts.createPost);
 
     const [feedback, setFeedback] = useState<{ message: string; type: "success" | "error" } | null>(null);
@@ -194,17 +193,6 @@ export function ComposePostManager() {
         }
     };
 
-    const formatTimestamp = (ts?: number) => {
-        if (!ts) return "";
-        return new Date(ts).toLocaleString("ro-RO", {
-            day: "numeric",
-            month: "numeric",
-            year: "numeric",
-            hour: "numeric",
-            minute: "2-digit",
-            hour12: true,
-        });
-    };
 
     return (
         <div className="w-full max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -477,7 +465,7 @@ export function ComposePostManager() {
                                                     Data
                                                 </label>
                                                 <div className="relative flex items-center">
-                                                    <CalendarIcon className="w-4 h-4 text-zinc-400 absolute left-3 pointer-events-none" />
+                                                    <CalendarIcon className="size-5 text-zinc-400 absolute left-3 pointer-events-none" />
                                                     <input
                                                         type="date"
                                                         value={field.state.value}
@@ -496,7 +484,7 @@ export function ComposePostManager() {
                                                     Timpul
                                                 </label>
                                                 <div className="relative flex items-center">
-                                                    <Clock className="w-4 h-4 text-zinc-400 absolute left-3 pointer-events-none" />
+                                                    <Clock className="size-5 text-zinc-400 absolute left-3 pointer-events-none" />
                                                     <input
                                                         type="time"
                                                         value={field.state.value}
